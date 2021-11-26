@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {# shared links - main css files etc. #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    {#  page-level links   #}
+    {% block links %}  {% endblock %}
+</head>
+<body>
+{% block body %}
+
+{% endblock %}
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+<!-- Page level custom scripts -->
+{% block scripts %}
+{% endblock scripts %}
+</html>

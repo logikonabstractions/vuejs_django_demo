@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+    Hello Vuejs!
+{% endblock %}
+{% block body %}
+
+    {% for object in object_list %}
+        {{ object }}
+    {% endfor %}
+
+    {% verbatim %}
+    <div id="app">
+        {{ foo }}
+    </div>
+    <div id="bind">
+            <span v-bind:title="hover_msg">
+                <p>
+                    {{ title }}
+                </p>
+            </span>
+    </div>
+    <div id="ifcond">
+        <span v-if="foo">foo is in the house</span>
+        <span v-else-if="bar">bar is in the house</span>
+        <span v-else>no one is in the house :(</span>
+    </div>
+    <div id="forloop">
+        <p v-for="x in arr">
+            {{ x }}
+        </p>
+    </div>
+    <div id="funccall">
+        <p v-on:click="funccall">
+            {{ message }}
+        </p>
+    </div>
+    <div id="formModel">
+        <p>Welcome to {{ person }}</p>
+        <input v-model="person">
+    </div>
+
+
+
+
+    {% endverbatim %}
+
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}
